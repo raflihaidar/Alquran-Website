@@ -13,9 +13,9 @@ root.render(
   <Provider store={store}>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/surah/:surahId" element={<Surah />} />
-        <Route path="/audio" element={<Audio />} />
+        <Route path="/" exact element={<App />} />
+        <Route path="/surah/:surahId" exact element={<Surah />} />
+        <Route path="/audio" exact element={<Audio />} />
       </Routes>
     </BrowserRouter>
   </Provider>
