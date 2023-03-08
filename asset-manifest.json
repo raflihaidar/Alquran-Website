@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Alquran-Website/static/css/main.9c3481f7.css",
-    "main.js": "/Alquran-Website/static/js/main.b4359740.js",
+    "main.js": "/Alquran-Website/static/js/main.9535725f.js",
     "static/media/quran.png": "/Alquran-Website/static/media/quran.f173984d39df2cab4539.png",
     "index.html": "/Alquran-Website/index.html",
     "main.9c3481f7.css.map": "/Alquran-Website/static/css/main.9c3481f7.css.map",
-    "main.b4359740.js.map": "/Alquran-Website/static/js/main.b4359740.js.map"
+    "main.9535725f.js.map": "/Alquran-Website/static/js/main.9535725f.js.map"
   },
   "entrypoints": [
     "static/css/main.9c3481f7.css",
-    "static/js/main.b4359740.js"
+    "static/js/main.9535725f.js"
   ]
 }
