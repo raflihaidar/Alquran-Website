@@ -1,32 +1,19 @@
-import Navbar from "./components/Navbar";
-import List from "./components/List";
-import SearchBar from "./components/SearchBar";
-import { useEffect, useState } from "react";
-import { PulseLoader } from "react-spinners";
+import Home from "./components/Home";
+import Surah from "./components/Surah";
+import Audio from "./components/Audio";
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 
 function App() {
-  const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000);
-  }, []);
   return (
-    <div>
-      {loading ? (
-        <div className="loader">
-          <PulseLoader loading={loading} color="green" size={20} />
-        </div>
-      ) : (
-        <div>
-          <Navbar />
-          <SearchBar />
-          <List />
-        </div>
-      )}
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" exact element={<Home />} />
+        <Route path="/surah/:surahId" exact element={<Surah />} />
+        <Route path="/audio" exact element={<Audio />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
