@@ -63,7 +63,7 @@ const Surah = () => {
     setTimeout(() => {
       setLoading(false);
     }, 500);
-  }, [surahId]);
+  }, []);
 
   return (
     <>

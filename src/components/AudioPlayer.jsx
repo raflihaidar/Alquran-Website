@@ -87,7 +87,7 @@ const AudioPlayer = ({ togglePlay, isPlaying, audioPlayer }) => {
         setElapsed(currentTime);
       }
     }, 100);
-  }, [volume, isPlaying]);
+  }, [volume, isPlaying, audioPlayer, mute]);
 
   return (
     <div className="bg-green-600 p-5 fixed bottom-0 md:w-3/5 w-full">
