@@ -32,7 +32,7 @@ const SearchBar = () => {
 
   return (
     <div className="text-green-700">
-      <div className="flex justify-between border md:w-2/5 w-4/5 mx-auto p-5 mt-28 rounded-full relative shadow-lg">
+      <div className="flex justify-between border border-green-600 md:w-2/5 w-4/5 mx-auto p-5 mt-28 rounded-full relative">
         <input
           type="text"
           className="border-none outline-none w-3/5"

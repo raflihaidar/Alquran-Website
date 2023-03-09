@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { getSingleSurah } from "../redux/actions/action";
@@ -23,15 +23,18 @@ const Surah = () => {
     number_of_surah,
   } = surah;
 
-  const getSingleDataSurah = async (id) => {
-    const url = `https://raw.githubusercontent.com/penggguna/QuranJSON/master/surah/${id}.json`;
-    try {
-      const response = await axios.get(url);
-      dispatch(getSingleSurah(response.data));
-    } catch (err) {
-      console.log("error", err);
-    }
-  };
+  const getSingleDataSurah = useCallback(
+    async (id) => {
+      const url = `https://raw.githubusercontent.com/penggguna/QuranJSON/master/surah/${id}.json`;
+      try {
+        const response = await axios.get(url);
+        dispatch(getSingleSurah(response.data));
+      } catch (err) {
+        console.log("error", err);
+      }
+    },
+    [dispatch]
+  );
 
   const NextButton = () => {
     return number_of_surah <= 113 ? (
@@ -56,14 +59,12 @@ const Surah = () => {
   };
 
   useEffect(() => {
-    if (surahId && surahId !== "") {
-      getSingleDataSurah(surahId);
-    }
+    if (surahId && surahId !== "") getSingleDataSurah(surahId);
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
     }, 500);
-  }, [getSingleDataSurah, setLoading, surahId]);
+  }, [getSingleDataSurah, surahId]);
 
   return (
     <>

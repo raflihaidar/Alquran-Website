@@ -10,7 +10,7 @@ function App() {
     <HashRouter>
       <Routes>
         <Route path="/" exact element={<Home />} />
-        <Route path="/surah/:surahId" exact element={<Surah />} />
+        <Route path="/surah/:surahId" element={<Surah />} />
         <Route path="/audio" exact element={<Audio />} />
       </Routes>
     </HashRouter>
